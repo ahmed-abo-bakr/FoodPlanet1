@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "873215778105",
+    "firebase_url": "https://foodplanet-1313f.firebaseio.com",
+    "project_id": "foodplanet-1313f",
+    "storage_bucket": "foodplanet-1313f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873215778105:android:b7ce21901883420ec65ce8",
+        "android_client_info": {
+          "package_name": "com.FoodPlanet.FoodPlanet1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "873215778105-3rc99m77h9n27ltqhjffb07ec6abtdms.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.FoodPlanet.FoodPlanet1",
+            "certificate_hash": "5b02ee1fe6bd61cca020d5a9968e4a40a3df85ce"
+          }
+        },
+        {
+          "client_id": "873215778105-6m6042q1r431sqa5hlfa76ohqb60vfjh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqfpiR-mXNwDITX-pJ_sZUrvChkycWfPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "873215778105-6m6042q1r431sqa5hlfa76ohqb60vfjh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

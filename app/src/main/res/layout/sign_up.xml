@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="48dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_menu_camera" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:fontFamily="@font/carter_one"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/login"
+        android:layout_marginEnd="@dimen/login"
+        android:text="click on camera to choose froom gallary from gallary"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtUserName"
+        android:layout_width="280dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round_edit_text"
+        android:drawableLeft="@drawable/ic_person_foshia_24dp"
+        android:hint="user name"
+        android:inputType="textEmailAddress"
+        android:paddingEnd="@dimen/login"
+        android:paddingLeft="16dp"
+        android:paddingRight="@dimen/login"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="16sp"
+        android:drawableStart="@drawable/ic_person_foshia_24dp" />
+
+    <EditText
+        android:id="@+id/txtemail"
+        android:layout_width="280dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round_edit_text"
+        android:drawableLeft="@drawable/ic_person_foshia_24dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingEnd="@dimen/login"
+        android:paddingLeft="16dp"
+        android:paddingRight="@dimen/login"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="16sp"
+        android:drawableStart="@drawable/ic_person_foshia_24dp" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="280dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/ic_lock_foshia_24dp"
+        android:background="@drawable/round_edit_text"
+        android:backgroundTint="#fff"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingEnd="@dimen/login"
+        android:paddingLeft="8dp"
+        android:paddingRight="@dimen/login"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="16sp" />
+    <EditText
+        android:id="@+id/passCon"
+        android:layout_width="280dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/ic_lock_foshia_24dp"
+        android:background="@drawable/round_edit_text"
+        android:backgroundTint="#fff"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:paddingEnd="@dimen/login"
+        android:paddingLeft="8dp"
+        android:paddingRight="@dimen/login"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="16sp"
+        android:drawableStart="@drawable/ic_lock_foshia_24dp"
+         />
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="280dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:background="#FFF595B5"
+        android:gravity="center"
+        android:text="Sign Up"
+        android:fontFamily="@font/carter_one"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="already have account ? login"
+        android:gravity="center"
+        android:fontFamily="@font/carter_one"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        />
+
+    <!--<LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="58dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+             />
+
+        <TextView
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/fb"
+            android:layout_marginStart="@dimen/fb"
+            android:gravity="center"
+            android:text="or"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="58dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            />
+    </LinearLayout>
+-->
+</LinearLayout>
