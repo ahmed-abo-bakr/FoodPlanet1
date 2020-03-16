@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.FoodPlanet.FoodPlanet1.ui.home.homeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.FoodPlanet.FoodPlanet1.ui.seach.SearchFragment"
+        android:label="search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/nav_notification"
+        android:name="com.FoodPlanet.FoodPlanet1.ui.notification.NotificationFragment"
+        android:label="notificaion"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/nav_channel"
+        android:name="com.FoodPlanet.FoodPlanet1.ui.myChannel.MyChannelFragment"
+        android:label="terms"
+        tools:layout="@layout/fragment_my_channel" />
+
+</navigation>
