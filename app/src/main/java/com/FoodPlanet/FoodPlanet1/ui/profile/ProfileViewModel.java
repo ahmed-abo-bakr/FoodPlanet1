@@ -1,16 +1,16 @@
-package com.FoodPlanet.FoodPlanet1.ui.gallery;
+package com.FoodPlanet.FoodPlanet1.ui.profile;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class ProfileViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public ProfileViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("This is profile fragment");
     }
 
     public LiveData<String> getText() {

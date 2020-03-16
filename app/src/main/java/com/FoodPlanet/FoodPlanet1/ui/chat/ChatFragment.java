@@ -1,4 +1,4 @@
-package com.FoodPlanet.FoodPlanet1.ui.gallery;
+package com.FoodPlanet.FoodPlanet1.ui.chat;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.FoodPlanet.FoodPlanet1.R;
 
-public class GalleryFragment extends Fragment {
+public class ChatFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private ChatViewModel chatViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(this, new Observer<String>() {
+        chatViewModel =
+                ViewModelProviders.of(this).get(ChatViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_chat, container, false);
+        final TextView textView = root.findViewById(R.id.text_tools);
+        chatViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

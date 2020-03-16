@@ -1,16 +1,16 @@
-package com.FoodPlanet.FoodPlanet1.ui.slideshow;
+package com.FoodPlanet.FoodPlanet1.ui.chat;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class ChatViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public ChatViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is tools fragment");
     }
 
     public LiveData<String> getText() {

@@ -1,4 +1,4 @@
-package com.FoodPlanet.FoodPlanet1.ui.tools;
+package com.FoodPlanet.FoodPlanet1.ui.terms;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.FoodPlanet.FoodPlanet1.R;
 
-public class ToolsFragment extends Fragment {
+public class TermsFragment extends Fragment {
 
-    private ToolsViewModel toolsViewModel;
+    private TermsViewModel termsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        toolsViewModel =
-                ViewModelProviders.of(this).get(ToolsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_tools, container, false);
-        final TextView textView = root.findViewById(R.id.text_tools);
-        toolsViewModel.getText().observe(this, new Observer<String>() {
+        termsViewModel =
+                ViewModelProviders.of(this).get(TermsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_terms, container, false);
+        final TextView textView = root.findViewById(R.id.text_share);
+        termsViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

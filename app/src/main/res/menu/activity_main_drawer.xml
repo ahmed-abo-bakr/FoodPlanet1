@@ -7,31 +7,30 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
-            android:title="profile" />
+            android:title="Home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="subscriptions" />
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_person_foshia_24dp"
+            android:title="Profile" />
+
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Sign out" />
-        <item
-            android:id="@+id/nav_tools"
+            android:id="@+id/nav_chat"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
+            android:title="chat Soon" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_Terms"
                 android:icon="@drawable/ic_menu_share"
                 android:title="Terms and privacy policy" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_help"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Help and feedback" />
+
+
         </menu>
     </item>
 

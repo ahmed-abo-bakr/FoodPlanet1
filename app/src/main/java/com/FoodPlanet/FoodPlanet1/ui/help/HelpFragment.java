@@ -1,11 +1,10 @@
-package com.FoodPlanet.FoodPlanet1.ui.slideshow;
+package com.FoodPlanet.FoodPlanet1.ui.help;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,17 +13,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.FoodPlanet.FoodPlanet1.R;
 
-public class SlideshowFragment extends Fragment {
+public class HelpFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private HelpViewModel helpViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(this, new Observer<String>() {
+        helpViewModel =
+                ViewModelProviders.of(this).get(HelpViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_help, container, false);
+        final TextView textView = root.findViewById(R.id.text_send);
+        helpViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

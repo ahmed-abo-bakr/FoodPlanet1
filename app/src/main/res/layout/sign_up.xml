@@ -3,35 +3,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/forgroung"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="48dp"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_menu_camera" />
-
-    <TextView
+    <LinearLayout
+        android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:fontFamily="@font/carter_one"
-        android:gravity="center"
-        android:layout_marginStart="@dimen/login"
-        android:layout_marginEnd="@dimen/login"
-        android:text="click on camera to choose froom gallary from gallary"
-        android:textColor="#fff"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/header_splash_screen"
+        >
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="48dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_menu_camera" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:fontFamily="@font/carter_one"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            android:text="click on camera to choose your photo from gallary"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
 
     <EditText
         android:id="@+id/txtUserName"
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_gravity="center"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/round_edit_text"
         android:drawableLeft="@drawable/ic_person_foshia_24dp"
         android:hint="user name"
@@ -48,10 +63,12 @@
 
     <EditText
         android:id="@+id/txtemail"
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/round_edit_text"
         android:drawableLeft="@drawable/ic_person_foshia_24dp"
         android:hint="Email"
@@ -64,14 +81,16 @@
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:textSize="16sp"
-        android:drawableStart="@drawable/ic_person_foshia_24dp" />
+        android:drawableStart="@drawable/ic_email_foshia_24dp" />
 
     <EditText
         android:id="@+id/pass"
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:drawableLeft="@drawable/ic_lock_foshia_24dp"
         android:background="@drawable/round_edit_text"
         android:backgroundTint="#fff"
@@ -87,10 +106,12 @@
         android:textSize="16sp" />
     <EditText
         android:id="@+id/passCon"
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:drawableLeft="@drawable/ic_lock_foshia_24dp"
         android:background="@drawable/round_edit_text"
         android:backgroundTint="#fff"
@@ -108,29 +129,36 @@
          />
     <Button
         android:id="@+id/signup"
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:background="#FFF595B5"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/btn_border_foshia"
         android:gravity="center"
         android:text="Sign Up"
         android:fontFamily="@font/carter_one"
         android:textAllCaps="false"
-        android:textColor="#fff"
+        android:textColor="@color/colorAccent"
         android:textSize="16sp" />
 
 
-    <TextView
+    <Button
+        android:id="@+id/signup_to_login"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="48dp"
         android:text="already have account ? login"
         android:gravity="center"
+        android:background="@drawable/btn_border_foshia"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/carter_one"
         android:textSize="16sp"
-        android:textColor="#ffffff"
+        android:textColor="@color/colorAccent"
         android:textStyle="bold"
-        android:layout_marginTop="16dp"
+
         />
 
     <!--<LinearLayout
