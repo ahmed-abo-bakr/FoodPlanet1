@@ -5,5 +5,7 @@
     <color name="colorAccent">#FFE75F8D</color>
     <color name="forgroung">#0FE75F8D</color>
     <color name="whit">#fff</color>
-    <color name="black">#000</color>
+    <color name="black">#ED000000</color>
+    <color name="smooth_black">#BE000000</color>
+    <color name="smooth_grey">#60CCCCCC</color>
 </resources>

@@ -1,27 +1,20 @@
 package com.FoodPlanet.FoodPlanet1.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.widget.TextView;
+import android.widget.Button;
+
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
 import com.FoodPlanet.FoodPlanet1.R;
-import com.FoodPlanet.FoodPlanet1.ui.help.HelpFragment;
 import com.FoodPlanet.FoodPlanet1.ui.myChannel.MyChannelFragment;
 import com.FoodPlanet.FoodPlanet1.ui.notification.NotificationFragment;
 import com.FoodPlanet.FoodPlanet1.ui.seach.SearchFragment;
@@ -31,10 +24,9 @@ public class homeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         /*final TextView textView = root.findViewById(R.id.text_home);
         homeViewModel.getText().observe(this, new Observer<String>() {
             @Override
@@ -42,14 +34,15 @@ public class homeFragment extends Fragment {
                 textView.setText(s);
             }
         });*/
+
+
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        final Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+        /*final Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         BottomNavigationView navView = view.findViewById(R.id.nav_view);
 
         //handle bottom nav
@@ -92,5 +85,15 @@ public class homeFragment extends Fragment {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+*/
+        Button button = view.findViewById(R.id.follow);
 
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LayoutInflater.from(getContext()).inflate(R.layout.fragment_explore, null);
+            }
+        });
+    }
 }

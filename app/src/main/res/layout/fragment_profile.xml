@@ -1,44 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/forgroung"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/header_splash_screen">
+        android:background="@color/forgroung"
+        android:paddingBottom="8dp">
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="48dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_menu_camera" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/profile_to_home"
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_arrow_back__24dp"
+
+                />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_gravity="center"
+                android:text="ahmed_abo_bakr"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/user_image"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center|top"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_menu_camera" />
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:layout_gravity="center|bottom"
+                android:orientation="vertical"
+                android:layout_marginLeft="8dp">
+
+                <TextView
+                    android:id="@+id/posts_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center|bottom"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|bottom"
+                    android:text="Posts"
+                    android:textColor="@color/smooth_black"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center|bottom"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/followers_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center|bottom"
+                    android:text="301"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|bottom"
+                    android:text="Followers"
+                    android:textColor="@color/smooth_black"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/following_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center|bottom"
+                    android:text="259"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|bottom"
+                    android:text="following"
+                    android:textColor="@color/smooth_black"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <!--<TextView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:fontFamily="@font/carter_one"
+                android:gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="click on camera to change your photo from gallary"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:textStyle="bold" />-->
+        </LinearLayout>
 
         <TextView
+            android:id="@+id/user_email_header"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:fontFamily="@font/carter_one"
-            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="8dp"
+            android:gravity="left"
+            android:text="\'@ahmed abo bakr"
+            android:textColor="@color/smooth_black"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/edit_profile"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="16dp"
-            android:text="click on camera to change your photo from gallary"
-            android:textColor="#fff"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:background="@drawable/btn_border_foshia"
+            android:gravity="center"
+            android:text="Edit Profile"
+            android:fontFamily="@font/carter_one"
+            android:textAllCaps="false"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp" />
     </LinearLayout>
 
 
-    <EditText
+    <!--<EditText
         android:id="@+id/txtUserName"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -97,7 +252,7 @@
         android:fontFamily="@font/carter_one"
         android:textAllCaps="false"
         android:textColor="@color/colorAccent"
-        android:textSize="16sp" />
+        android:textSize="16sp" />-->
 
 
 </LinearLayout>

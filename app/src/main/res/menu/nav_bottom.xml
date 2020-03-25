@@ -18,7 +18,7 @@
         android:title="notification" />
 
     <item
-        android:id="@+id/nav_channel"
-        android:icon="@drawable/ic_my_channel_foshia_24dp"
-        android:title="my channel" />
+        android:id="@+id/nav_messages"
+        android:icon="@drawable/ic_chat_black_24dp"
+        android:title="messages" />
 </menu>

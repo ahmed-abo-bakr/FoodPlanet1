@@ -21,6 +21,22 @@
         <activity android:name=".MainActivity" android:theme="@style/AppTheme"/>
         <activity android:name=".SignUp" android:theme="@style/AppTheme"/>
         <activity android:name=".AccountRecovery" android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".ui.ProfileActivity"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ui.Chat"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ui.Terms"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ui.Help"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
