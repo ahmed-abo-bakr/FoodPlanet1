@@ -2,11 +2,9 @@ package com.FoodPlanet.FoodPlanet1.data;
 
 public class Chef {
 
-    public String chefName;
-    public String chefEmail;
-    public String chefPic;
-
-
+    private String chefName;
+    private String chefEmail;
+    private String chefPic;
     public String chefId;
 
     public String getChefName() {

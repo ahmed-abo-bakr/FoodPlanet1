@@ -15,4 +15,6 @@
     <string name="privacy_policy_1"> By clicking Login you agree to the </string>
     <string name="recovery_massage">we just need your registered Email to sent you password reset instruction</string>
     <string name="nav_drawer">nav_drawer</string>
+    <string name="like">like</string>
+    <string name="userPic" />
 </resources>

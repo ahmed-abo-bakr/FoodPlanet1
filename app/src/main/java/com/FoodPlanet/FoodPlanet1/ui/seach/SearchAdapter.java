@@ -85,9 +85,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
         chef = mSearchArrayList.get(position);
-
         //check following state
         checkFollowingstate(chef.chefId, holder.mFolllow);
+        holder.mFolllow.setVisibility(View.VISIBLE);
         // if current user show in search result
         if (chef.getChefId().equals(currentUser.getUid())) {
             holder.mFolllow.setVisibility(View.GONE);
@@ -99,6 +99,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                 .into(holder.mImageView);
         holder.mName.setText(chef.getChefName());
         holder.mEmail.setText(chef.getChefName());
+
 
         //handle on search Item click
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -120,7 +121,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                     FirebaseDatabase.getInstance().getReference().child("follow").child(currentUser.getUid())
                             .child("following").child(chef.getChefId()).setValue(true);
 
-                    FirebaseDatabase.getInstance().getReference().child("following").child(chef.getChefId())
+                    FirebaseDatabase.getInstance().getReference().child("follow").child(chef.getChefId())
                             .child("followers").child(currentUser.getUid()).setValue(true);
                 } else {
                     holder.mFolllow.setText("Follow");
@@ -128,7 +129,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                     FirebaseDatabase.getInstance().getReference().child("follow").child(currentUser.getUid())
                             .child("following").child(chef.getChefId()).removeValue();
 
-                    FirebaseDatabase.getInstance().getReference().child("following").child(chef.getChefId())
+                    FirebaseDatabase.getInstance().getReference().child("follow").child(chef.getChefId())
                             .child("followers").child(currentUser.getUid()).removeValue();
 
                 }

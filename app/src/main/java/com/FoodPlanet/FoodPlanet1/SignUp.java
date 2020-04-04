@@ -193,16 +193,7 @@ public class SignUp extends AppCompatActivity {
              Toast.makeText(this, "no photo selected", Toast.LENGTH_SHORT).show();
          }
      }*/
-    //upload profile data
-    /*private void uploadProfileData(){
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("users");
-        String userId = mDatabase.push().getKey();
-        name=mName.getText().toString().trim();
-        Chef chef=new Chef(name,email,downloadUri);
-        Log.e(TAG,"name : "+name +"email : "+email +"uri "+downloadUri);
-        mDatabase.child(userId).setValue(chef);
 
-    }*/
     //handle regiser case
     public void registerNewUser() {
         // Initialize Firebase Auth

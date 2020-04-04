@@ -76,6 +76,7 @@ public class SearchFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 searchList.clear();
+                setRecyclerView();
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
                     Chef chef = ds.getValue(Chef.class);

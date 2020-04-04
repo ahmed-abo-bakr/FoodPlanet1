@@ -14,10 +14,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.FoodPlanet.FoodPlanet1.MainActivity;
+import com.FoodPlanet.FoodPlanet1.ui.home.PostAdapter;
 import com.FoodPlanet.FoodPlanet1.R;
 import com.FoodPlanet.FoodPlanet1.data.Chef;
+import com.FoodPlanet.FoodPlanet1.data.Post;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
@@ -28,19 +32,24 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private DatabaseReference mDatabaseReference;
-    private FirebaseUser currentUser;
+    private final String TAG = "PROFILE ACIVITY";
     ImageView profilePic;
     TextView profileName, profileEmail;
     String profileId;
     SharedPreferences preferences;
     Button editProfile;
-    private final String TAG = "PROFILE ACIVITY";
+    TextView postsNum;
+    ArrayList<Post> postsList;
+    private DatabaseReference mDatabaseReference;
+    private FirebaseUser currentUser;
+    private PostAdapter mAdapter;
+    private TextView followers, following;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,20 +60,39 @@ public class ProfileActivity extends AppCompatActivity {
         preferences = getSharedPreferences("PREFS", MODE_PRIVATE);
         profileId = preferences.getString("id", null);
 
+
+        //.........................
+        postsList = new ArrayList<Post>();
+
+        setRecyclerView();
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        getProfileInfo(currentUser.getUid());
+        getPosts(currentUser.getUid());
+
+        postsNum = findViewById(R.id.posts_number);
+        followers = findViewById(R.id.followers_number);
+        following = findViewById(R.id.following_number);
         assert currentUser != null;
         if (currentUser.getUid().equals(profileId)) {
             // current user profile
             getProfileInfo(currentUser.getUid());
+            getFollowers(currentUser.getUid());
+            getPosts(currentUser.getUid());
         } else {
+
             if (profileId == null) {
                 getProfileInfo(currentUser.getUid());
+                getFollowers(currentUser.getUid());
+                getPosts(currentUser.getUid());
             } else {
                 getProfileInfo(profileId);
+                getFollowers(profileId);
+                getPosts(profileId);
                 checkFollowState();
                 preferences.edit().clear().apply();
             }
         }
+
 
         Button backButton = findViewById(R.id.profile_to_home);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -77,11 +105,80 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
+    // get posts
+    private void getPosts(final String profileId) {
+
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference("posts");
+
+        //Query query=mDatabaseReference.orderByChild("caption");
+        mDatabaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                postsList.clear();
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+
+                    Post post = ds.getValue(Post.class);
+                    if (post.getOwnerId().equals(profileId)) {
+                        postsList.add(post);
+                    }
+                }
+                postsNum.setText(String.valueOf(postsList.size()));
+                mAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    // get followers and following
+    private void getFollowers(String profileId) {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("follow").child(profileId).child("followers");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                followers.setText("" + dataSnapshot.getChildrenCount());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("follow").child(profileId).child("following");
+        reference1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                following.setText("" + dataSnapshot.getChildrenCount());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    //set posts recycler view
+    private void setRecyclerView() {
+
+        RecyclerView mRecyclerView = findViewById(R.id.profile_recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        mAdapter = new PostAdapter(postsList, this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
+    }
+
+    //check follow state
     private void checkFollowState() {
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("follow").child(currentUser.getUid())
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("follow").child(currentUser.getUid())
                 .child("following");
-        reference.addValueEventListener(new ValueEventListener() {
+        mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // user didnot follow before, follow now
@@ -105,6 +202,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
+    //get profile info
     private void getProfileInfo(String userId) {
 
 

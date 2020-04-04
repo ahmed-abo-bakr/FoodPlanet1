@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/forgroung"
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/profile_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -18,17 +18,17 @@
             android:layout_height="50dp"
             android:orientation="horizontal">
 
+
             <Button
                 android:id="@+id/profile_to_home"
                 android:layout_width="48dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_arrow_back__24dp"
-
-                />
-
+                android:background="@drawable/ic__backspace_foshai_24dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp" />
             <TextView
                 android:id="@+id/user_name"
                 android:layout_width="wrap_content"
@@ -255,4 +255,13 @@
         android:textSize="16sp" />-->
 
 
-</LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/profile_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_head"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp" />
+</RelativeLayout>
